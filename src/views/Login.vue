@@ -1,5 +1,5 @@
 <template>
-  <form class="card auth-card" @submit.prevent="submitHandler">
+  <form class="card auth-card">
     <div class="card-content">
       <span class="card-title">Домашняя бухгалтерия</span>
       <div class="input-field">
@@ -10,14 +10,7 @@
             :class="{invalid: ($v.email.$dirty && !$v.email.required) || ($v.email.$dirty && !$v.email.email)}"
         >
         <label for="email">Email</label>
-        <small
-          class="helper-text invalid"
-          v-if="$v.email.$dirty && !$v.email.required"
-        >Поле Email не должно быть пустым</small>
-        <small
-          class="helper-text invalid"
-          v-else-if="$v.email.$dirty && !$v.email.email"
-        >Введите корректный Email</small>
+        <small class="helper-text invalid">Email</small>
       </div>
       <div class="input-field">
         <input
@@ -50,7 +43,7 @@
 
       <p class="center">
         Нет аккаунта?
-        <router-link to="/register">Зарегистрироваться</router-link>
+        <a href="/">Зарегистрироваться</a>
       </p>
     </div>
   </form>
@@ -94,4 +87,4 @@ export default {
     }
   }
 }
-</script>
+
